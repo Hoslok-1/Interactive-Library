@@ -4,16 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Libraby</title>
+    <title>Library</title>
     <script src = "scripts.js" defer></script>
+    <link rel = "stylesheet" href = "styles.css">
 </head>
 <body>
     <div class = "container">
-        <label>Enter the book you want to insert</label>
-        <input type = "text" id = "bookName"><br>
-        <label>Enter the number of pages</label>
-        <input type = "text" id = "pages"><br>
-        <button type = "button" id = "submitBtn">Submit</button>
+        <div class = "enterBookDetails">
+            <label>Enter the book you want to insert</label>
+            <input type = "text" id = "bookName"><br>
+            <label>Enter the number of pages</label>
+            <input type = "text" id = "pages"><br>
+            <button type = "button" id = "submitBtn">Submit</button><br>
+        </div>
+        <h2>Books in your library:</h2>
+        <div class = "displayBooksPresent">
+            <div class = "card one">
+                <h4 id = "book1-name"><b></b></h4>
+                <p id = book1-pages></p>
+            </div>
+            <div class = "card two">
+                <h4 id = "book2-name"><b></b></h4>
+                <p id = book2-pages></p>
+            </div>
+            <div class = "card three">
+                <h4 id = "book3-name"><b></b></h4>
+                <p id = book3-pages></p>
+            </div>
+            <div class = "card four">
+                <h4 id = "book4-name"><b></b></h4>
+                <p id = book4-pages></p>
+            </div>
+            <div class = "card five">
+                <h4 id = "book5-name"><b></b></h4>
+                <p id = book5-pages></p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
