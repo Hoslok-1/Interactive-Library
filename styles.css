@@ -1,3 +1,11 @@
+.container{
+  display: flex;
+}
+
+.enterBookDetails{
+  width:350px;
+}
+
 .card {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -9,7 +17,6 @@
     padding:10px;
   }
 
-  
   /* On mouse-over, add a deeper shadow */
   .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -20,4 +27,11 @@
     flex-wrap: wrap;
     padding: 20px;
     justify-content: space-between;
+    margin-top: 70px;   
+    margin-right: 40px;
+    width: 1300px;
+}
+
+#title-top{
+  position: absolute;
 }
