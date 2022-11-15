@@ -6,68 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <script src = "scripts.js" defer></script>
-    <link rel = "stylesheet" href = "styles.css">
+    <link rel = "stylesheet" href="styles.css">
 </head>
 <body>
     <div class = "container">
-        <h2 id = "title-top">Books in your library:</h2>
-        <div class = "displayBooksPresent">
-            <div class = "card one">
-                <h4 id = "book1-name"><b></b></h4>
-                <p id = book1-pages></p>
-                <p id = book1-author></p>
-                <button id = "readStatusBtn1"></button>
-            </div>
-            <div class = "card two">
-                <h4 id = "book2-name"><b></b></h4>
-                <p id = book2-pages></p>
-                <p id = book2-author></p>
-                <button id = "readStatusBtn2"></button>
-            </div>
-            <div class = "card three">
-                <h4 id = "book3-name"><b></b></h4>
-                <p id = book3-pages></p>
-                <p id = book3-author></p>
-            </div>
-            <div class = "card four">
-                <h4 id = "book4-name"><b></b></h4>
-                <p id = book4-pages></p>
-                <p id = book4-author></p>
-            </div>
-            <div class = "card five">
-                <h4 id = "book5-name"><b></b></h4>
-                <p id = book5-pages></p>
-                <p id = book5-author></p>
-            </div>
-            <div class = "card six">
-                <h4 id = "book6-name"><b></b></h4>
-                <p id = book6-pages></p>
-                <p id = book6-author></p>
-            </div>
-        </div>
-        <div class = "enterBookDetails">
-            <!-- <label>Enter the book you want to insert</label>
-            <input type = "text" id = "bookName"><br>
-            <label>Enter the number of pages</label>
-            <input type = "text" id = "pages"><br>
-            <button type = "button" id = "submitBtn">Submit</button><br> -->
-            <div class = "enterTitle">
-                <label>Book Name:</label>
-                <input type = "text" id = "bookName"><br>
-            </div>
-            <div class = "enterAuthor">
-                <label>Author:</label>
-                <input type = "text" id = "author"><br>
-            </div>
-            <div class = "numOfPages">
-                <label>Pages</label>
-                <input type = "text" id = "pages"><br><br>
-            </div>
-            <div class = "bookCompleted">
-                <label>Read? :</label>
-                <input type = "checkbox" id = "readStatus" value = "read"><br><br>
-                <button type = "submit" id = "submitBtn">Submit</button><br>
-            </div>
+        <div class = "upper-container">
+            <button class = "open-button" onclick = "openForm()">Open Form</button>
+            <form class = "form-container">
+                <div class = "form-popup" id = "myForm">
+                    <label><b>Book Name</b></label>
+                    <input type = "text" id = "bookTitle" required><br>
+                    <label><b>Author Name</b></label>
+                    <input type = "text" id = "bookAuthor" required><br>
+                    <label><b>Pages</b></label>
+                    <input type = "text" id ="bookPages" required>
+                    <button type = "button" class = "btn submit" id  ="submitBtn">Submit</button>
+                    <button type = "button" class = "btn cancel" onclick="closeForm()">Close</button>
+                </div>
+            </form>
         </div>
     </div>
 </body>
