@@ -13,6 +13,7 @@ let title = document.getElementById('bookTitle');
 let author = document.getElementById('bookAuthor');
 let pages = document.getElementById('bookPages');
 let grid = document.getElementById('grid-container');
+
 document.getElementById('submitBtn').addEventListener('click', addBookToLibrary)
 
 
@@ -40,18 +41,40 @@ function displayCards(book)
     const bookTitle = document.createElement('h5')
     const bookAuthor = document.createElement('h6')
     const pages = document.createElement('h6')
+    const deleteBtn = document.createElement('button')
 
     gridItems.classList.add("grid-item")
     card.classList.add("card");
+    deleteBtn.classList.add("deleteBtn")
 
     bookTitle.textContent = `Book Name:${book.title}`;
     bookAuthor.textContent = `Book Author:${book.author}`;
     pages.textContent = `Pages:${book.pages}`
-
+    deleteBtn.textContent = "🗑️"
+    
     grid.appendChild(gridItems);
     gridItems.appendChild(card);
+    card.appendChild(deleteBtn)
     card.appendChild(bookTitle);
     card.appendChild(bookAuthor);
     card.appendChild(pages);
+
+    deleteBtn.addEventListener('click',(event)=>{
+        let tempTitle = `${book.title}`
+        let obj = myLibrary.find(book => book.title === tempTitle);
+        let index = myLibrary.indexOf(obj);
+        console.log(index);
+
+        const children = document.getElementById('grid-container').children
+        console.log(children);
+
+        const deleteChild = children.item(index);
+        console.log(deleteChild);
+        deleteChild.remove();
+        myLibrary.pop(myLibrary[index])
+        console.log(myLibrary)
+    })
+    
 }
+
 
