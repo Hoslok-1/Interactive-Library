@@ -12,7 +12,9 @@ function closeForm()
 let title = document.getElementById('bookTitle');
 let author = document.getElementById('bookAuthor');
 let pages = document.getElementById('bookPages');
+let readStatus = document.getElementById('readStatus');
 let grid = document.getElementById('grid-container');
+
 
 document.getElementById('submitBtn').addEventListener('click', addBookToLibrary)
 
@@ -36,21 +38,27 @@ function addBookToLibrary()
 
 function displayCards(book)
 {
+    readDecision = readStatus.checked
     const gridItems = document.createElement('div')
     const card = document.createElement('div')
     const bookTitle = document.createElement('h5')
     const bookAuthor = document.createElement('h6')
     const pages = document.createElement('h6')
     const deleteBtn = document.createElement('button')
+    const readStatusBtn = document.createElement('button')
 
     gridItems.classList.add("grid-item")
     card.classList.add("card");
     deleteBtn.classList.add("deleteBtn")
+    readStatusBtn.classList.add("readStatus")
 
     bookTitle.textContent = `Book Name:${book.title}`;
     bookAuthor.textContent = `Book Author:${book.author}`;
     pages.textContent = `Pages:${book.pages}`
     deleteBtn.textContent = "🗑️"
+    if(readDecision)
+    {readStatusBtn.textContent="Read"}
+    else{readStatusBtn.textContent="Not Read"}
     
     grid.appendChild(gridItems);
     gridItems.appendChild(card);
@@ -58,8 +66,9 @@ function displayCards(book)
     card.appendChild(bookTitle);
     card.appendChild(bookAuthor);
     card.appendChild(pages);
+    card.appendChild(readStatusBtn)
 
-    deleteBtn.addEventListener('click',(event)=>{
+    deleteBtn.addEventListener('click',()=>{
         let tempTitle = `${book.title}`
         let obj = myLibrary.find(book => book.title === tempTitle);
         let index = myLibrary.indexOf(obj);
@@ -73,6 +82,12 @@ function displayCards(book)
         deleteChild.remove();
         myLibrary.pop(myLibrary[index])
         console.log(myLibrary)
+    })
+
+    readStatusBtn.addEventListener('click',()=>{
+        if (readDecision)
+        {readStatusBtn.textContent = "Not Read"; readDecision = 0}
+        else{readStatusBtn.textContent = "Read";readDecision = 1}
     })
     
 }

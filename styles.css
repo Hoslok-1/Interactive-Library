@@ -78,6 +78,11 @@ body{
   border-radius: 50%;
 }
 
+.readStatus
+{
+  border-radius: 10%;
+  align-self: center;
+} 
 
 
 
