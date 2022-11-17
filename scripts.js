@@ -1,3 +1,8 @@
+let title = document.getElementById('bookTitle');
+let author = document.getElementById('bookAuthor');
+let pages = document.getElementById('bookPages');
+let readStatus = document.getElementById('readStatus');
+let grid = document.getElementById('grid-container');
 
 function openForm()
 {
@@ -5,15 +10,13 @@ function openForm()
 }
 function closeForm()
 {
+    title.value = ""
+    author.value = ""
+    pages.value = ""
     document.getElementById("myForm").style.display = "none";
 }
 
 
-let title = document.getElementById('bookTitle');
-let author = document.getElementById('bookAuthor');
-let pages = document.getElementById('bookPages');
-let readStatus = document.getElementById('readStatus');
-let grid = document.getElementById('grid-container');
 
 
 document.getElementById('submitBtn').addEventListener('click', addBookToLibrary)
@@ -33,6 +36,8 @@ function addBookToLibrary()
     myLibrary.push(bookObj);
     console.log(myLibrary)
     displayCards(bookObj);
+    console.log(title)
+    //document.getElementById(`bookTitle`).value = ``
     closeForm();
 }
 
@@ -42,8 +47,8 @@ function displayCards(book)
     const gridItems = document.createElement('div')
     const card = document.createElement('div')
     const bookTitle = document.createElement('h5')
-    const bookAuthor = document.createElement('h6')
-    const pages = document.createElement('h6')
+    const bookAuthor = document.createElement('h5')
+    const pages = document.createElement('h5')
     const deleteBtn = document.createElement('button')
     const readStatusBtn = document.createElement('button')
 
@@ -52,8 +57,8 @@ function displayCards(book)
     deleteBtn.classList.add("deleteBtn")
     readStatusBtn.classList.add("readStatus")
 
-    bookTitle.textContent = `Book Name:${book.title}`;
-    bookAuthor.textContent = `Book Author:${book.author}`;
+    bookTitle.textContent = `Name:${book.title}`;
+    bookAuthor.textContent = `Author:${book.author}`;
     pages.textContent = `Pages:${book.pages}`
     deleteBtn.textContent = "🗑️"
     if(readDecision)

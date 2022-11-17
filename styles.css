@@ -1,27 +1,47 @@
-body{
-  font-family: cursive;
+html,body{
+  margin:0;
+}
 
+body{
+  font-family: 'Roboto Mono', monospace;
+  background-color: #EEE2DC;
+  color:#123c69
 }
 .header
 {
   height:30px;
+  text-align: center;
+  background-color: #EDC7B7;
+  height: 100px;
+  margin-bottom: 1px;
+  border: 5px solid #bab2b5;
 }
 
 .form-popup{
   display:none;
+  background-color: #EDC7B7;
   position: fixed;
-  margin-left:600px;
-  margin-top: 200px;
+  margin-left:500px;
+  margin-top: 100px;
   backdrop-filter: blur(5px);
+  background-color: #AC3B61;
+  border: 5px solid #bab2b5;
+  padding: 20px;
+  font-size: larger;
 }
 
 .open-button{
   padding: 16px 20px;
   position: fixed;
+  transition: transform .2s; 
   bottom: 23px;
   right:28px;
   border-radius: 50%;
-  background-color: #50d8d7;
+  background-color: #88bdbc;
+}
+
+.open-button:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
 .form-container input[type=text], .form-container input[type=password] {
@@ -29,12 +49,14 @@ body{
   padding: 15px;
   margin: 5px 0 22px 0;
   border: none;
-  background: #f1f1f1;
+  background-color: #EDC7B7;
+
 }
+
 .form-container {
   max-width: 300px;
   padding: 10px;
-  background-color: white;
+
 }
 
 .form-container .btn:hover, .open-button:hover {
@@ -52,15 +74,16 @@ body{
   display: flex;
   flex-direction: column;
   text-align: center;
-  font-family: cursive;
+
   font-size: 24px;
   border: 10px solid black;
   padding: 1rem 1rem;
+  color: white;
   min-height: 3em;
   width: 200px;
-  resize: both;
-  background: linear-gradient(to top, rgba(#cffffe, 0.3), rgba(#f9f7d9, 0.3), rgba(#fce2ce, 0.3), rgba(#ffc1f3, 0.3));
-  border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23cffffe' /%3E%3Cstop offset='25%25' stop-color='%23f9f7d9' /%3E%3Cstop offset='50%25' stop-color='%23fce2ce' /%3E%3Cstop offset='100%25' stop-color='%23ffc1f3' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3'/%3E %3C/svg%3E") 1;
+  background-color: #123c69;
+  resize: both;  
+  border: 5px solid #bab2b5;
 }
 .grid-item
 {
@@ -75,14 +98,35 @@ body{
 .deleteBtn
 {
   align-self: flex-end;
-  border-radius: 50%;
+  border-radius: 40%;
+  background-color: orange;
+  height:25px;
+  transition: transform .2s; 
+}
+
+.deleteBtn:hover{
+  transform: scale(1.5);
 }
 
 .readStatus
 {
   border-radius: 10%;
   align-self: center;
-} 
+  background-color:orange;
+  border: none;
+  font-size: 15px;
+  color: #FFFFFF;
+  padding: 20px;
+  width: 120px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn
+{
+  background-color: #88bdbc;
+  border-radius: 10%;
+}
 
 
 

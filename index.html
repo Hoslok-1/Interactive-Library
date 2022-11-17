@@ -7,24 +7,27 @@
     <title>Library</title>
     <script src = "scripts.js" defer></script>
     <link rel = "stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <div class = "container">
         <div class = "upper-container">
             <div class = "header">
-                
+                <h1>My Library 📚</h1>
             </div>
             <button class = "open-button" onclick = "openForm()">+</button>
             <form class = "form-container">
                 <div class = "form-popup" id = "myForm">
-                    <label><b>Book Name</b></label>
+                    <label><b>Book Name:</b></label>
                     <input type = "text" id = "bookTitle" required><br>
                     <label><b>Author Name</b></label>
                     <input type = "text" id = "bookAuthor" required><br>
                     <label><b>Pages</b></label>
                     <input type = "text" id ="bookPages" required>
                     <label><b>Have you read the book? </b></label>
-                    <input type = "checkbox" id = "readStatus"><br>
+                    <input type = "checkbox" id = "readStatus"><br><br>
                     <button type = "button" class = "btn submit" id  ="submitBtn">Submit</button>
                     <button type = "button" class = "btn cancel" onclick="closeForm()">Close</button>
                 </div>
